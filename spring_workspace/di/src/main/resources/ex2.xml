@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Test test = new Test(); -->
+	<bean class="com.sang.di.ex2.Test" id="test"/>
+	
+	<!-- 
+		TestBean testBean = new TestBean(); 
+		testBean.setTest(test);
+	-->	
+	<bean class="com.sang.di.ex2.TestBean" id="testBean">
+		<property name="test"> <!-- setter name -->
+			<ref bean="test"/> <!-- bean name -->
+		</property>
+	</bean>
+</beans>
